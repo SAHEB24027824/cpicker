@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/vanilla-picker.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="main-nav">
+
+            <div class="logo">Logo-with-Link</div>
+
+            <div>
+                <ul class="link-container">
+                    <li class="indi-link"><a href="./index.html">Picker</a></li>
+                    <li class="indi-link">About</li>
+                    <li class="indi-link">Contact</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="sub-main-mav">
+            <ul class="mobile-link-container">
+                <li class="indi-link"><a href="./index.html">Picker</a></li>
+                <li class="indi-link">Box Shadow</li>
+            </ul>
+        </div>
+
+        <div class="mian-banner">
+
+            <div class="social-share">
+                <div class="socialshare-icon">F</div>
+                <div class="socialshare-icon">G</div>
+                <div class="socialshare-icon">T</div>
+            </div>
+            <div class="banner-contect">
+            </div>
+            <div class="ad">Google Ad.</div>
+        </div>
+
+
+        <div class="color-picker-container">
+            <div  class="preview-container">
+
+            </div>
+            <div class="parent-container">
+               <div  id="parent"></div>
+            </div>
+               <div  class="preview-container">
+
+               </div>
+        </div>
+      
+
+    </div>
+
+    <script>
+
+        /*
+            Create a new Picker instance and set the parent element.
+            By default, the color picker is a popup which appears when you click the parent.
+        */
+        var parent = document.querySelector('#parent');
+        var picker = new Picker(
+            {
+          parent: parent,
+          popup: false,
+          alpha: false,
+        //   editor: false,
+          color: 'orangered',
+          onChange: function(color) {
+            parent.style.backgroundColor = color.rgbaString;
+          },
+      }
+        );
+
+        /* Fixed picker */
+
+        /*
+            You can do what you want with the chosen color using two callbacks: onChange and onDone.
+        */
+        picker.onChange = function(color) {
+            // parent.style.background = color.rgbaString;
+        };
+    
+        /* onDone is similar to onChange, but only called when you click 'Ok' */
+    
+    </script>
+
+</body>
+
+</html>
+
+
