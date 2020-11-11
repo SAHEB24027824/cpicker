@@ -1,10 +1,4 @@
-/*!
- * vanilla-picker v2.10.1
- * https://vanilla-picker.js.org
- *
- * Copyright 2017-2019 Andreas Borgen (https://github.com/Sphinxxxx), Adam Brooks (https://github.com/dissimulate)
- * Released under the ISC license.
- */
+
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
