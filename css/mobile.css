@@ -51,14 +51,12 @@
         background-color:#ebebeb;
         display: grid;
         grid-template-columns: 100%;
+     
     }
     .color-picker-container{
         width: 100%;
-        margin: 0px auto;
-        display: grid;
-        grid-template-columns: 100%;  
-    }
-    #parent{
-        width:0px;       
+        margin: auto;
     }
   }
+
+  

@@ -100,33 +100,24 @@
     margin: auto;
     text-align: center;
 }
-.color-picker-container{
-    width: 80%;
-    margin: 0px auto;
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
-    border: 1px solid;
-   
-}
+
 
 #parent{
-    margin-left: 50px;
-    width:0px;
-    margin-left: 0px;
-}
-.parent-container{
-    position: relative;
-    width: 100%;
-    border: 1px solid;
     text-align: center;
+    width:0px;
+} 
+.parent-container{
+    width: 100%;
+    /* text-align: center; */
 }
 
-.preview-container{
-    width: 60%;
+
+.color-picker-container{
+    width: 40%;
     margin: auto;
-    border: 1px solid;
-    height: 400px;
+
 }
+
 }
 
 

@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Picker</title>
     <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/vanilla-picker.min.js"></script>
+
 
 
 </head>
 
 <body>
 
-    <div class="wrapper">
+    <div class="wrapper" style="padding-bottom: 300px;">
         <div class="main-nav">
 
             <div class="logo">Logo-with-Link</div>
@@ -49,55 +49,55 @@
 
 
         <div class="color-picker-container">
-            <div  class="preview-container">
+            <canvas id="myCanvas"  height="200px" style="border:1px solid #d3d3d3;">
+                Your browser does not support the HTML5 canvas tag.</canvas>
 
-            </div>
-            <div class="parent-container">
-               <div  id="parent"></div>
-            </div>
-               <div  class="preview-container">
-
-               </div>
         </div>
-      
 
-    </div>
 
-    <script>
+        <!DOCTYPE html>
+        <html>
 
-        /*
-            Create a new Picker instance and set the parent element.
-            By default, the color picker is a popup which appears when you click the parent.
-        */
-        var parent = document.querySelector('#parent');
-        var picker = new Picker(
-            {
-          parent: parent,
-          popup: false,
-          alpha: false,
-        //   editor: false,
-          color: 'orangered',
-          onChange: function(color) {
-            parent.style.backgroundColor = color.rgbaString;
-          },
-      }
-        );
+        <body>
 
-        /* Fixed picker */
 
-        /*
-            You can do what you want with the chosen color using two callbacks: onChange and onDone.
-        */
-        picker.onChange = function(color) {
-            // parent.style.background = color.rgbaString;
-        };
-    
-        /* onDone is similar to onChange, but only called when you click 'Ok' */
-    
-    </script>
+            <script>
+
+          
+
+                let elem =document.querySelector('.color-picker-container')
+
+                let cwidth=elem.offsetWidth
+                console.log(cwidth)
+                var c = document.getElementById("myCanvas");
+                c.style.width=cwidth+'px'
+                var ctx = c.getContext("2d");
+
+                // Create gradient
+                var grd = ctx.createLinearGradient(0, 0, cwidth, 0);
+                grd.addColorStop(0, "rgba(255,255,255,1)");
+                grd.addColorStop(0.5, "rgba(0, 30, 255,1)");
+
+                ctx.fillStyle = grd;
+                ctx.fillRect(0, 0, cwidth, 200);
+
+                grd = ctx.createLinearGradient(0, 0, 0, 200);
+                grd.addColorStop(0, "rgba(0,0,0,0)");
+                grd.addColorStop(1, "rgba(0,0,0,1)");
+
+     
+
+
+                ctx.fillStyle = grd;
+                ctx.fillRect(0, 0, cwidth, 200);
+
+            </script>
+
+        </body>
+
+        </html>
+
 
 </body>
 
 </html>
-
-
